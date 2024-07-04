@@ -28,63 +28,119 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            dataGridView1 = new DataGridView();
-            label1 = new Label();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panelData = new Panel();
+            labelDate = new Label();
+            labelStatus = new Label();
+            labelDescription = new Label();
+            labelSubject = new Label();
+            labelCustomerID = new Label();
+            labelID = new Label();
+            panelData.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // panelData
             // 
-            panel1.BackColor = SystemColors.ControlDarkDark;
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(dataGridView1);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(800, 450);
-            panel1.TabIndex = 0;
+            panelData.BackColor = Color.Tan;
+            panelData.Controls.Add(labelDate);
+            panelData.Controls.Add(labelStatus);
+            panelData.Controls.Add(labelDescription);
+            panelData.Controls.Add(labelSubject);
+            panelData.Controls.Add(labelCustomerID);
+            panelData.Controls.Add(labelID);
+            panelData.Dock = DockStyle.Fill;
+            panelData.Location = new Point(0, 0);
+            panelData.Name = "panelData";
+            panelData.Size = new Size(800, 450);
+            panelData.TabIndex = 0;
             // 
-            // dataGridView1
+            // labelDate
             // 
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 0);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(800, 450);
-            dataGridView1.TabIndex = 0;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            labelDate.Anchor = AnchorStyles.Top;
+            labelDate.AutoSize = true;
+            labelDate.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            labelDate.Location = new Point(750, 50);
+            labelDate.Name = "labelDate";
+            labelDate.Size = new Size(57, 28);
+            labelDate.TabIndex = 5;
+            labelDate.Text = "Date";
             // 
-            // label1
+            // labelStatus
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(40, 77);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 20);
-            label1.TabIndex = 1;
-            label1.Text = "label1";
+            labelStatus.Anchor = AnchorStyles.Top;
+            labelStatus.AutoSize = true;
+            labelStatus.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            labelStatus.Location = new Point(600, 50);
+            labelStatus.Name = "labelStatus";
+            labelStatus.Size = new Size(71, 28);
+            labelStatus.TabIndex = 4;
+            labelStatus.Text = "Status";
             // 
-            // MusteriIstekleriForm
+            // labelDescription
+            // 
+            labelDescription.Anchor = AnchorStyles.Top;
+            labelDescription.AutoSize = true;
+            labelDescription.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            labelDescription.Location = new Point(330, 50);
+            labelDescription.Name = "labelDescription";
+            labelDescription.Size = new Size(121, 28);
+            labelDescription.TabIndex = 3;
+            labelDescription.Text = "Description";
+            // 
+            // labelSubject
+            // 
+            labelSubject.Anchor = AnchorStyles.Top;
+            labelSubject.AutoSize = true;
+            labelSubject.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            labelSubject.Location = new Point(200, 50);
+            labelSubject.Name = "labelSubject";
+            labelSubject.Size = new Size(82, 28);
+            labelSubject.TabIndex = 2;
+            labelSubject.Text = "Subject";
+            // 
+            // labelCustomerID
+            // 
+            labelCustomerID.Anchor = AnchorStyles.Top;
+            labelCustomerID.AutoSize = true;
+            labelCustomerID.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            labelCustomerID.Location = new Point(50, 50);
+            labelCustomerID.Name = "labelCustomerID";
+            labelCustomerID.Size = new Size(129, 28);
+            labelCustomerID.TabIndex = 1;
+            labelCustomerID.Text = "Customer ID";
+            // 
+            // labelID
+            // 
+            labelID.Anchor = AnchorStyles.Top;
+            labelID.AutoSize = true;
+            labelID.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            labelID.Location = new Point(0, 50);
+            labelID.Name = "labelID";
+            labelID.Size = new Size(33, 28);
+            labelID.TabIndex = 0;
+            labelID.Text = "ID";
+            // 
+            // CustomerRequest
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(panel1);
-            Name = "MusteriIstekleriForm";
-            Text = "MusteriIstekleriForm";
-            Load += MusteriIstekleriForm_Load;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Controls.Add(panelData);
+            Name = "CustomerRequest";
+            Text = "CustomerRequests";
+            Load += CustomerRequest_Load;
+            panelData.ResumeLayout(false);
+            panelData.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
-        private DataGridView dataGridView1;
-        private Label label1;
+        private Panel panelData;
+        private Label labelID;
+        private Label labelSubject;
+        private Label labelCustomerID;
+        private Label labelStatus;
+        private Label labelDescription;
+        private Label labelDate;
     }
 }

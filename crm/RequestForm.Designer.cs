@@ -34,6 +34,8 @@
             labelSubject = new Label();
             labelDescriptionText = new Label();
             labelSubjectText = new Label();
+            labelCustomerID = new Label();
+            labelCustomerIDText = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -53,6 +55,8 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.GradientActiveCaption;
+            panel1.Controls.Add(labelCustomerIDText);
+            panel1.Controls.Add(labelCustomerID);
             panel1.Controls.Add(labelDescription);
             panel1.Controls.Add(labelSubject);
             panel1.Controls.Add(labelDescriptionText);
@@ -68,7 +72,7 @@
             // 
             labelDescription.AutoSize = true;
             labelDescription.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            labelDescription.Location = new Point(10, 300);
+            labelDescription.Location = new Point(3, 253);
             labelDescription.Name = "labelDescription";
             labelDescription.Size = new Size(138, 31);
             labelDescription.TabIndex = 5;
@@ -78,16 +82,16 @@
             // 
             labelSubject.AutoSize = true;
             labelSubject.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            labelSubject.Location = new Point(10, 120);
+            labelSubject.Location = new Point(3, 150);
             labelSubject.Name = "labelSubject";
-            labelSubject.Size = new Size(94, 31);
+            labelSubject.Size = new Size(100, 31);
             labelSubject.TabIndex = 4;
-            labelSubject.Text = "Subject";
+            labelSubject.Text = "Subject:";
             // 
             // labelDescriptionText
             // 
             labelDescriptionText.AutoSize = true;
-            labelDescriptionText.Location = new Point(10, 350);
+            labelDescriptionText.Location = new Point(12, 300);
             labelDescriptionText.MaximumSize = new Size(350, 300);
             labelDescriptionText.Name = "labelDescriptionText";
             labelDescriptionText.Size = new Size(116, 20);
@@ -98,12 +102,31 @@
             // labelSubjectText
             // 
             labelSubjectText.AutoSize = true;
-            labelSubjectText.Location = new Point(10, 170);
+            labelSubjectText.Location = new Point(175, 156);
             labelSubjectText.Name = "labelSubjectText";
             labelSubjectText.Size = new Size(89, 20);
             labelSubjectText.TabIndex = 2;
             labelSubjectText.Text = "Subject Text";
             labelSubjectText.Click += Detay_Click;
+            // 
+            // labelCustomerID
+            // 
+            labelCustomerID.AutoSize = true;
+            labelCustomerID.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            labelCustomerID.Location = new Point(3, 100);
+            labelCustomerID.Name = "labelCustomerID";
+            labelCustomerID.Size = new Size(153, 31);
+            labelCustomerID.TabIndex = 6;
+            labelCustomerID.Text = "Customer ID:";
+            // 
+            // labelCustomerIDText
+            // 
+            labelCustomerIDText.AutoSize = true;
+            labelCustomerIDText.Location = new Point(175, 108);
+            labelCustomerIDText.Name = "labelCustomerIDText";
+            labelCustomerIDText.Size = new Size(128, 20);
+            labelCustomerIDText.TabIndex = 7;
+            labelCustomerIDText.Text = "Customer ID TEXT";
             // 
             // RequestForm
             // 
@@ -113,8 +136,8 @@
             Controls.Add(button1);
             Controls.Add(panel1);
             Name = "RequestForm";
-            Text = "GorevForm";
-            Load += GorevForm_Load;
+            Text = "RequestForm";
+            Load += RequestFormLoad;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -128,5 +151,7 @@
         private Label labelDescriptionText;
         private Label labelSubject;
         private Label labelDescription;
+        private Label labelCustomerIDText;
+        private Label labelCustomerID;
     }
 }

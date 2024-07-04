@@ -12,16 +12,23 @@ namespace crm
 {
     public partial class RequestForm : Form
     {
+        private string customerId;
         private string subject;
         private string description;
+        private string status;
+        private string dateTime;
         private Color defaultColor = Color.GreenYellow;
         private Color newColor = Color.Red;
 
-        public RequestForm(string subject, string description)
+        public RequestForm(string id, string subject, string description, string status, string dateTime)
         {
             InitializeComponent();
+            this.customerId = id;
             this.subject = subject;
             this.description = description;
+            this.status = status;
+            this.dateTime = dateTime;
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -41,7 +48,7 @@ namespace crm
 
         }
 
-        private void GorevForm_Load(object sender, EventArgs e)
+        private void RequestFormLoad(object sender, EventArgs e)
         {
             // Display the data passed from MusteriIstekleriForm
             labelSubjectText.Text = subject;

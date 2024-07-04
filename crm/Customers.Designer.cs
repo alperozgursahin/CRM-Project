@@ -108,16 +108,16 @@
             panelData.Size = new Size(800, 450);
             panelData.TabIndex = 0;
             // 
-            // MusterilerForm
+            // Customers
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(800, 450);
             Controls.Add(panelData);
-            Name = "MusterilerForm";
-            Text = "MusterilerForm";
-            Load += MusterilerForm_Load;
+            Name = "Customers";
+            Text = "Customers";
+            Load += Customers_Load;
             panelData.ResumeLayout(false);
             panelData.PerformLayout();
             ResumeLayout(false);
