@@ -10,7 +10,7 @@ namespace crm
         private void button1_Click(object sender, EventArgs e)
         {
             // Yeni bir Form2 nesnesi oluþtur
-            MusterilerForm musterilerForm = new MusterilerForm();
+            Customers musterilerForm = new Customers();
 
             // Yeni formu göster
             musterilerForm.Show();
@@ -24,7 +24,7 @@ namespace crm
         private void button2_Click(object sender, EventArgs e)
         {
             // Yeni bir Form2 nesnesi oluþtur
-            MusteriIstekleriForm musteriIstekleri = new MusteriIstekleriForm();
+            CustomerRequest musteriIstekleri = new CustomerRequest();
 
             // Yeni formu göster
             musteriIstekleri.Show();

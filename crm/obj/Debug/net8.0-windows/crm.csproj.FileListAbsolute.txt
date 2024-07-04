@@ -14,7 +14,6 @@ C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\crm.genruntimeconfi
 C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\ref\crm.dll
 C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\crm.Form1.resources
 C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\crm.csproj.GenerateResource.cache
-C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\crm.MusterilerForm.resources
 C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\crm.csproj.AssemblyReference.cache
 C:\Users\alper\source\repos\crm\crm\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
 C:\Users\alper\source\repos\crm\crm\bin\Debug\net8.0-windows\Google.Protobuf.dll
@@ -30,5 +29,6 @@ C:\Users\alper\source\repos\crm\crm\bin\Debug\net8.0-windows\runtimes\win-x64\na
 C:\Users\alper\source\repos\crm\crm\bin\Debug\net8.0-windows\runtimes\win-x64\native\krb5_64.dll
 C:\Users\alper\source\repos\crm\crm\bin\Debug\net8.0-windows\runtimes\win-x64\native\krbcc64.dll
 C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\crm.csproj.Up2Date
-C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\crm.MusteriIstekleriForm.resources
-C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\crm.GorevForm.resources
+C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\crm.CustomerRequest.resources
+C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\crm.Customers.resources
+C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\crm.RequestForm.resources
