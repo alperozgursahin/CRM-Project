@@ -62,7 +62,7 @@ namespace crm
             AddLabelToPanel(dateTime, labelDate.Location.X, yOffset, yMargin);
 
             // Buton ekleme
-            AddButtonToPanel("Review", labelDate.Location.X + 175, yOffset, yMargin, id, subject, description, status, dateTime); // Butonun yerleşimini ayarlayın
+            AddButtonToPanel("Review", labelDate.Location.X + 175, yOffset, yMargin, customerId, subject, description, status, dateTime); // Butonun yerleşimini ayarlayın
         }
 
         private void AddLabelToPanel(string text, int xPosition, int yOffset, int yMargin, bool isDescription = false, bool isSubject = false)
@@ -78,7 +78,7 @@ namespace crm
             panelData.Controls.Add(label);
         }
 
-        private void AddButtonToPanel(string text, int xPosition, int yOffset, int yMargin, string id, string subject, string description, string status, string dateTime)
+        private void AddButtonToPanel(string text, int xPosition, int yOffset, int yMargin, string customerId, string subject, string description, string status, string dateTime)
         {
             Button button = new Button();
             button.Text = text;
@@ -91,7 +91,7 @@ namespace crm
             button.Click += (sender, e) =>
             {
                 // RequestForm'u oluşturup parametreleri gönderme
-                RequestForm requestForm = new RequestForm(id, subject, description, status, dateTime);
+                RequestForm requestForm = new RequestForm(customerId, subject, description, status, dateTime);
                 requestForm.Show();
             };
         }

@@ -51,7 +51,9 @@ namespace crm
         private void RequestFormLoad(object sender, EventArgs e)
         {
             // Display the data passed from MusteriIstekleriForm
+            labelCustomerIDText.Text = customerId;
             labelSubjectText.Text = subject;
+            labelStatusText.Text = status;
             labelDescriptionText.Text = description;
 
         }

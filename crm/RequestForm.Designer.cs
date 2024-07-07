@@ -30,12 +30,14 @@
         {
             button1 = new Button();
             panel1 = new Panel();
+            labelStatusText = new Label();
+            labelStatus = new Label();
+            labelCustomerIDText = new Label();
+            labelCustomerID = new Label();
             labelDescription = new Label();
             labelSubject = new Label();
             labelDescriptionText = new Label();
             labelSubjectText = new Label();
-            labelCustomerID = new Label();
-            labelCustomerIDText = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -55,6 +57,8 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.GradientActiveCaption;
+            panel1.Controls.Add(labelStatusText);
+            panel1.Controls.Add(labelStatus);
             panel1.Controls.Add(labelCustomerIDText);
             panel1.Controls.Add(labelCustomerID);
             panel1.Controls.Add(labelDescription);
@@ -68,11 +72,49 @@
             panel1.TabIndex = 1;
             panel1.Paint += panel1_Paint;
             // 
+            // labelStatusText
+            // 
+            labelStatusText.AutoSize = true;
+            labelStatusText.Location = new Point(175, 211);
+            labelStatusText.Name = "labelStatusText";
+            labelStatusText.Size = new Size(80, 20);
+            labelStatusText.TabIndex = 9;
+            labelStatusText.Text = "Status Text";
+            // 
+            // labelStatus
+            // 
+            labelStatus.AutoSize = true;
+            labelStatus.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            labelStatus.Location = new Point(3, 204);
+            labelStatus.Name = "labelStatus";
+            labelStatus.Size = new Size(86, 31);
+            labelStatus.TabIndex = 8;
+            labelStatus.Text = "Status:";
+            // 
+            // labelCustomerIDText
+            // 
+            labelCustomerIDText.AutoSize = true;
+            labelCustomerIDText.Location = new Point(175, 108);
+            labelCustomerIDText.Name = "labelCustomerIDText";
+            labelCustomerIDText.Size = new Size(128, 20);
+            labelCustomerIDText.TabIndex = 7;
+            labelCustomerIDText.Text = "Customer ID TEXT";
+            // 
+            // labelCustomerID
+            // 
+            labelCustomerID.AutoSize = true;
+            labelCustomerID.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            labelCustomerID.Location = new Point(3, 100);
+            labelCustomerID.Name = "labelCustomerID";
+            labelCustomerID.Size = new Size(153, 31);
+            labelCustomerID.TabIndex = 6;
+            labelCustomerID.Text = "Customer ID:";
+            // 
             // labelDescription
             // 
             labelDescription.AutoSize = true;
             labelDescription.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            labelDescription.Location = new Point(3, 253);
+            labelDescription.Location = new Point(0, 280);
             labelDescription.Name = "labelDescription";
             labelDescription.Size = new Size(138, 31);
             labelDescription.TabIndex = 5;
@@ -91,7 +133,7 @@
             // labelDescriptionText
             // 
             labelDescriptionText.AutoSize = true;
-            labelDescriptionText.Location = new Point(12, 300);
+            labelDescriptionText.Location = new Point(12, 320);
             labelDescriptionText.MaximumSize = new Size(350, 300);
             labelDescriptionText.Name = "labelDescriptionText";
             labelDescriptionText.Size = new Size(116, 20);
@@ -102,31 +144,12 @@
             // labelSubjectText
             // 
             labelSubjectText.AutoSize = true;
-            labelSubjectText.Location = new Point(175, 156);
+            labelSubjectText.Location = new Point(175, 158);
             labelSubjectText.Name = "labelSubjectText";
             labelSubjectText.Size = new Size(89, 20);
             labelSubjectText.TabIndex = 2;
             labelSubjectText.Text = "Subject Text";
             labelSubjectText.Click += Detay_Click;
-            // 
-            // labelCustomerID
-            // 
-            labelCustomerID.AutoSize = true;
-            labelCustomerID.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            labelCustomerID.Location = new Point(3, 100);
-            labelCustomerID.Name = "labelCustomerID";
-            labelCustomerID.Size = new Size(153, 31);
-            labelCustomerID.TabIndex = 6;
-            labelCustomerID.Text = "Customer ID:";
-            // 
-            // labelCustomerIDText
-            // 
-            labelCustomerIDText.AutoSize = true;
-            labelCustomerIDText.Location = new Point(175, 108);
-            labelCustomerIDText.Name = "labelCustomerIDText";
-            labelCustomerIDText.Size = new Size(128, 20);
-            labelCustomerIDText.TabIndex = 7;
-            labelCustomerIDText.Text = "Customer ID TEXT";
             // 
             // RequestForm
             // 
@@ -153,5 +176,7 @@
         private Label labelDescription;
         private Label labelCustomerIDText;
         private Label labelCustomerID;
+        private Label labelStatusText;
+        private Label labelStatus;
     }
 }
