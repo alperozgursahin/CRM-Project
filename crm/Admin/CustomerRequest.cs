@@ -30,18 +30,15 @@ namespace crm
 
                     while (reader.Read())
                     {
-                        // CreatedDate sütununu DateTime olarak okuyup string'e dönüştürüyoruz
+                        string id = reader["Id"]?.ToString() ?? string.Empty;
+                        string customerId = reader["CustomerId"]?.ToString() ?? string.Empty;
+                        string subject = reader["Subject"]?.ToString() ?? string.Empty;
+                        string description = reader["Description"]?.ToString() ?? string.Empty;
+                        string status = reader["Status"]?.ToString() ?? string.Empty;
                         DateTime createdDate = reader.GetDateTime(reader.GetOrdinal("CreatedDate"));
                         string createdDateString = createdDate.ToString("yyyy-MM-dd HH:mm:ss");
 
-                        // Her satır için 5 tane Label ve 1 Buton oluşturup panelData'ya ekliyoruz.
-                        AddRowToPanel(reader["Id"].ToString(),
-                                      reader["CustomerId"].ToString(),
-                                      reader["Subject"].ToString(),
-                                      reader["Description"].ToString(),
-                                      reader["Status"].ToString(),
-                                      createdDateString,
-                                      yOffset, yMargin);
+                        AddRowToPanel(id, customerId, subject, description, status, createdDateString, yOffset, yMargin);
                         yOffset += 40; // Bir sonraki satırın altına gelecek mesafe
                     }
                 }
@@ -61,36 +58,43 @@ namespace crm
             AddLabelToPanel(status, labelStatus.Location.X, yOffset, yMargin);
             AddLabelToPanel(dateTime, labelDate.Location.X, yOffset, yMargin);
 
-            // Buton ekleme
             AddButtonToPanel("Review", labelDate.Location.X + 175, yOffset, yMargin, customerId, subject, description, status, dateTime); // Butonun yerleşimini ayarlayın
         }
 
         private void AddLabelToPanel(string text, int xPosition, int yOffset, int yMargin, bool isDescription = false, bool isSubject = false)
         {
-            Label label = new Label();
-            label.Text = text;
-            label.AutoSize = true;
-            if (isDescription) label.MaximumSize = new System.Drawing.Size(250, 30);
-            if (isSubject) label.MaximumSize = new System.Drawing.Size(125, 30);
+            Label label = new Label
+            {
+                Text = text,
+                AutoSize = true,
+                Location = new System.Drawing.Point(xPosition, yOffset + yMargin),
+                Anchor = AnchorStyles.Top
+            };
+
+            if (isDescription)
+                label.MaximumSize = new System.Drawing.Size(250, 30);
+
+            if (isSubject)
+                label.MaximumSize = new System.Drawing.Size(125, 30);
+
             label.AutoEllipsis = true;
-            label.Location = new System.Drawing.Point(xPosition, yOffset + yMargin);
-            label.Anchor = AnchorStyles.Top;
             panelData.Controls.Add(label);
         }
 
         private void AddButtonToPanel(string text, int xPosition, int yOffset, int yMargin, string customerId, string subject, string description, string status, string dateTime)
         {
-            Button button = new Button();
-            button.Text = text;
-            button.AutoSize = true;
-            button.Location = new System.Drawing.Point(xPosition, yOffset + yMargin - 8);
-            button.Anchor = AnchorStyles.Top;
+            Button button = new Button
+            {
+                Text = text,
+                AutoSize = true,
+                Location = new System.Drawing.Point(xPosition, yOffset + yMargin - 8),
+                Anchor = AnchorStyles.Top
+            };
+
             panelData.Controls.Add(button);
 
-            // Buton tıklama olayı
             button.Click += (sender, e) =>
             {
-                // RequestForm'u oluşturup parametreleri gönderme
                 RequestForm requestForm = new RequestForm(customerId, subject, description, status, dateTime);
                 requestForm.Show();
             };

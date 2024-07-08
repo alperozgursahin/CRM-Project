@@ -7,7 +7,8 @@ namespace crm
 {
     public partial class CustomerDashboard : Form
     {
-        private int customerId;
+        private readonly int customerId;
+
         public CustomerDashboard(int customerId)
         {
             InitializeComponent();
@@ -18,10 +19,10 @@ namespace crm
         {
             string connectionString = "server=localhost;database=crm_database;uid=root;pwd=1234;";
             string query = @"
-                            SELECT Id, Subject, Description, Status, CreatedDate
-                            FROM supportrequest
-                            WHERE CustomerId = @customerId
-                            ORDER BY CreatedDate DESC";
+                SELECT Id, Subject, Description, Status, CreatedDate
+                FROM supportrequest
+                WHERE CustomerId = @customerId
+                ORDER BY CreatedDate DESC";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -38,15 +39,13 @@ namespace crm
 
                     while (reader.Read())
                     {
-                        // Veritabanından okunan değerlerin null olup olmadığını kontrol ediyoruz
-                        string id = reader["Id"].ToString();
-                        string subject = reader["Subject"] as string ?? "";
-                        string description = reader["Description"] as string ?? "";
-                        string status = reader["Status"] as string ?? "";
+                        string id = reader["Id"]?.ToString() ?? string.Empty;
+                        string subject = reader["Subject"]?.ToString() ?? string.Empty;
+                        string description = reader["Description"]?.ToString() ?? string.Empty;
+                        string status = reader["Status"]?.ToString() ?? string.Empty;
                         DateTime createdDate = reader.GetDateTime(reader.GetOrdinal("CreatedDate"));
                         string createdDateString = createdDate.ToString("yyyy-MM-dd HH:mm:ss");
 
-                        // Her satır için 5 tane Label ve 1 Buton oluşturup panelData'ya ekliyoruz.
                         AddRowToPanel(id, subject, description, status, createdDateString, yOffset, yMargin);
                         yOffset += 40; // Bir sonraki satırın altına gelecek mesafe
                     }
@@ -60,13 +59,6 @@ namespace crm
 
         private void AddRowToPanel(string id, string subject, string description, string status, string dateTime, int yOffset, int yMargin)
         {
-            // Parametrelerin null olup olmadığını kontrol ediyoruz
-            id ??= "";
-            subject ??= "";
-            description ??= "";
-            status ??= "";
-            dateTime ??= "";
-
             AddLabelToPanel(id, labelID.Location.X, yOffset, yMargin);
             AddLabelToPanel(subject, labelSubject.Location.X, yOffset, yMargin, isSubject: true);
             AddLabelToPanel(description, labelDescription.Location.X, yOffset, yMargin, isDescription: true);
@@ -76,14 +68,21 @@ namespace crm
 
         private void AddLabelToPanel(string text, int xPosition, int yOffset, int yMargin, bool isDescription = false, bool isSubject = false)
         {
-            Label label = new Label();
-            label.Text = text;
-            label.AutoSize = true;
-            if (isDescription) label.MaximumSize = new System.Drawing.Size(250, 30);
-            if (isSubject) label.MaximumSize = new System.Drawing.Size(125, 30);
+            Label label = new Label
+            {
+                Text = text,
+                AutoSize = true,
+                Location = new System.Drawing.Point(xPosition, yOffset + yMargin),
+                Anchor = AnchorStyles.Top
+            };
+
+            if (isDescription)
+                label.MaximumSize = new System.Drawing.Size(250, 30);
+
+            if (isSubject)
+                label.MaximumSize = new System.Drawing.Size(125, 30);
+
             label.AutoEllipsis = true;
-            label.Location = new System.Drawing.Point(xPosition, yOffset + yMargin);
-            label.Anchor = AnchorStyles.Top;
             panelData.Controls.Add(label);
         }
 
