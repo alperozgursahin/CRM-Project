@@ -27,13 +27,13 @@ namespace crm
             string connectionString = "server=localhost;database=crm_database;uid=root;pwd=1234;";
 
             // Parameterized query to prevent SQL injection
-            string query = "SELECT password FROM users WHERE username = @username AND role = @role";
+            string query = "SELECT password FROM users WHERE username = @username AND usertype = @usertype";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@username", inputUsername);
-                cmd.Parameters.AddWithValue("@role", inputUserType);
+                cmd.Parameters.AddWithValue("@usertype", inputUserType);
 
                 try
                 {
@@ -48,6 +48,9 @@ namespace crm
                         {
                             // Password matches
                             MessageBox.Show("Login successful!");
+
+                            // Insert login record into the logins table
+                            InsertLoginRecord(inputUsername, inputUserType, connectionString);
 
                             // Navigate to the appropriate form based on user type
                             if (inputUserType == "Admin")
@@ -82,6 +85,29 @@ namespace crm
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
+
+        private void InsertLoginRecord(string username, string usertype, string connectionString)
+        {
+            string insertQuery = "INSERT INTO logins (username, login_time, usertype) VALUES (@username, @login_time, @usertype)";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                MySqlCommand insertCmd = new MySqlCommand(insertQuery, connection);
+                insertCmd.Parameters.AddWithValue("@username", username);
+                insertCmd.Parameters.AddWithValue("@login_time", DateTime.Now);
+                insertCmd.Parameters.AddWithValue("@usertype", usertype);
+
+                try
+                {
+                    connection.Open();
+                    insertCmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error inserting login record: " + ex.Message);
                 }
             }
         }
