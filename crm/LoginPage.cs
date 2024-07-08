@@ -27,7 +27,7 @@ namespace crm
             string connectionString = "server=localhost;database=crm_database;uid=root;pwd=1234;";
 
             // Parameterized query to prevent SQL injection
-            string query = "SELECT password FROM users WHERE username = @username AND usertype = @usertype";
+            string query = "SELECT password, id FROM users WHERE username = @username AND usertype = @usertype";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -43,6 +43,7 @@ namespace crm
                     if (reader.Read())
                     {
                         string storedPassword = reader["password"].ToString();
+                        int customerId = Convert.ToInt32(reader["id"]);
 
                         if (storedPassword == inputPassword)
                         {
@@ -61,9 +62,9 @@ namespace crm
                             }
                             else if (inputUserType == "Customer")
                             {
-                                // Open customer dashboard
-                                //CustomerDashboard customerDashboard = new CustomerDashboard();
-                                //customerDashboard.Show();
+                                // Open customer dashboard and pass customerId
+                                CustomerDashboard customerDashboard = new CustomerDashboard(customerId);
+                                customerDashboard.Show();
                             }
 
                             this.Hide(); // Hide the login form

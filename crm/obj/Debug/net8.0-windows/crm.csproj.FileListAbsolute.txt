@@ -33,3 +33,5 @@ C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\crm.CustomerRequest
 C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\crm.Customers.resources
 C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\crm.RequestForm.resources
 C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\crm.LoginPage.resources
+C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\crm.CustomerDashboard.resources
+C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\crm.Customer.CustomerCreateRequest.resources
