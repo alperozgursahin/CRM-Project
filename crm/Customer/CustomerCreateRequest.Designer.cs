@@ -38,49 +38,54 @@
             // labelSubject
             // 
             labelSubject.AutoSize = true;
-            labelSubject.Location = new Point(119, 85);
+            labelSubject.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            labelSubject.Location = new Point(96, 63);
             labelSubject.Name = "labelSubject";
-            labelSubject.Size = new Size(58, 20);
+            labelSubject.Size = new Size(122, 38);
             labelSubject.TabIndex = 0;
-            labelSubject.Text = "Subject";
+            labelSubject.Text = "Subject:";
             // 
             // labelDescription
             // 
             labelDescription.AutoSize = true;
-            labelDescription.Location = new Point(269, 85);
+            labelDescription.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            labelDescription.Location = new Point(96, 164);
             labelDescription.Name = "labelDescription";
-            labelDescription.Size = new Size(85, 20);
+            labelDescription.Size = new Size(175, 38);
             labelDescription.TabIndex = 1;
-            labelDescription.Text = "Description";
+            labelDescription.Text = "Description:";
             // 
             // textSubject
             // 
-            textSubject.Location = new Point(96, 134);
+            textSubject.Location = new Point(311, 74);
             textSubject.Name = "textSubject";
-            textSubject.Size = new Size(125, 27);
+            textSubject.Size = new Size(196, 27);
             textSubject.TabIndex = 2;
             // 
             // textDescription
             // 
-            textDescription.Location = new Point(255, 134);
+            textDescription.Location = new Point(311, 175);
             textDescription.Name = "textDescription";
-            textDescription.Size = new Size(125, 27);
+            textDescription.Size = new Size(196, 27);
             textDescription.TabIndex = 3;
             // 
             // buttonSubmitRequest
             // 
-            buttonSubmitRequest.Location = new Point(469, 134);
+            buttonSubmitRequest.BackColor = Color.Wheat;
+            buttonSubmitRequest.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            buttonSubmitRequest.Location = new Point(311, 266);
             buttonSubmitRequest.Name = "buttonSubmitRequest";
-            buttonSubmitRequest.Size = new Size(94, 29);
+            buttonSubmitRequest.Size = new Size(196, 45);
             buttonSubmitRequest.TabIndex = 4;
-            buttonSubmitRequest.Text = "Submit";
-            buttonSubmitRequest.UseVisualStyleBackColor = true;
+            buttonSubmitRequest.Text = "Create Request";
+            buttonSubmitRequest.UseVisualStyleBackColor = false;
             buttonSubmitRequest.Click += buttonSubmitRequest_Click;
             // 
             // CustomerCreateRequest
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Tan;
             ClientSize = new Size(800, 450);
             Controls.Add(buttonSubmitRequest);
             Controls.Add(textDescription);

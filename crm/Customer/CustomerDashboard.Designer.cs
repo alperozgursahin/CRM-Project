@@ -41,11 +41,12 @@
             // buttonCreateNewRequest
             // 
             buttonCreateNewRequest.Anchor = AnchorStyles.Top;
-            buttonCreateNewRequest.BackColor = Color.Transparent;
-            buttonCreateNewRequest.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            buttonCreateNewRequest.Location = new Point(264, 47);
+            buttonCreateNewRequest.BackColor = Color.Wheat;
+            buttonCreateNewRequest.Font = new Font("Segoe UI Black", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            buttonCreateNewRequest.Location = new Point(17, 14);
+            buttonCreateNewRequest.Margin = new Padding(50);
             buttonCreateNewRequest.Name = "buttonCreateNewRequest";
-            buttonCreateNewRequest.Size = new Size(287, 52);
+            buttonCreateNewRequest.Size = new Size(767, 84);
             buttonCreateNewRequest.TabIndex = 5;
             buttonCreateNewRequest.Text = "Create New Request";
             buttonCreateNewRequest.UseVisualStyleBackColor = false;

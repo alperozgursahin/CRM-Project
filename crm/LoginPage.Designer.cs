@@ -41,15 +41,16 @@
             // labelUsername
             // 
             labelUsername.AutoSize = true;
-            labelUsername.Location = new Point(120, 180);
+            labelUsername.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            labelUsername.Location = new Point(120, 184);
             labelUsername.Name = "labelUsername";
-            labelUsername.Size = new Size(78, 20);
+            labelUsername.Size = new Size(102, 25);
             labelUsername.TabIndex = 0;
             labelUsername.Text = "Username:";
             // 
             // textUsername
             // 
-            textUsername.Location = new Point(120, 200);
+            textUsername.Location = new Point(120, 212);
             textUsername.Name = "textUsername";
             textUsername.Size = new Size(245, 27);
             textUsername.TabIndex = 1;
@@ -57,15 +58,16 @@
             // labelPassword
             // 
             labelPassword.AutoSize = true;
-            labelPassword.Location = new Point(120, 250);
+            labelPassword.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            labelPassword.Location = new Point(120, 255);
             labelPassword.Name = "labelPassword";
-            labelPassword.Size = new Size(73, 20);
+            labelPassword.Size = new Size(97, 25);
             labelPassword.TabIndex = 2;
             labelPassword.Text = "Password:";
             // 
             // textPassword
             // 
-            textPassword.Location = new Point(120, 270);
+            textPassword.Location = new Point(120, 283);
             textPassword.Name = "textPassword";
             textPassword.PasswordChar = '*';
             textPassword.Size = new Size(245, 27);
@@ -74,9 +76,10 @@
             // labelUserType
             // 
             labelUserType.AutoSize = true;
+            labelUserType.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
             labelUserType.Location = new Point(120, 122);
             labelUserType.Name = "labelUserType";
-            labelUserType.Size = new Size(73, 20);
+            labelUserType.Size = new Size(96, 25);
             labelUserType.TabIndex = 4;
             labelUserType.Text = "User Type";
             // 
@@ -84,14 +87,15 @@
             // 
             cmbUserType.FormattingEnabled = true;
             cmbUserType.Items.AddRange(new object[] { "Admin", "Customer" });
-            cmbUserType.Location = new Point(202, 119);
+            cmbUserType.Location = new Point(222, 123);
             cmbUserType.Name = "cmbUserType";
-            cmbUserType.Size = new Size(163, 28);
+            cmbUserType.Size = new Size(143, 28);
             cmbUserType.TabIndex = 5;
             // 
             // buttonLogin
             // 
             buttonLogin.BackColor = Color.LightSkyBlue;
+            buttonLogin.Font = new Font("Segoe UI Black", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
             buttonLogin.ForeColor = SystemColors.ControlText;
             buttonLogin.Location = new Point(120, 344);
             buttonLogin.Name = "buttonLogin";

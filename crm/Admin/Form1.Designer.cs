@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            label1 = new Label();
             button2 = new Button();
             button1 = new Button();
-            label1 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -47,8 +47,19 @@
             panel1.Size = new Size(208, 450);
             panel1.TabIndex = 0;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            label1.Location = new Point(3, 27);
+            label1.Name = "label1";
+            label1.Size = new Size(209, 41);
+            label1.TabIndex = 2;
+            label1.Text = "CRM SYSTEM";
+            // 
             // button2
             // 
+            button2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
             button2.Location = new Point(3, 212);
             button2.Name = "button2";
             button2.Size = new Size(200, 60);
@@ -59,6 +70,7 @@
             // 
             // button1
             // 
+            button1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
             button1.Location = new Point(3, 132);
             button1.Name = "button1";
             button1.Size = new Size(200, 60);
@@ -66,16 +78,6 @@
             button1.Text = "Customers";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            label1.Location = new Point(3, 27);
-            label1.Name = "label1";
-            label1.Size = new Size(209, 41);
-            label1.TabIndex = 2;
-            label1.Text = "CRM SYSTEM";
             // 
             // Form1
             // 

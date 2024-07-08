@@ -66,10 +66,7 @@ namespace crm
             panelData.Controls.Add(label);
         }
 
-        private void customerPhone_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 
 }

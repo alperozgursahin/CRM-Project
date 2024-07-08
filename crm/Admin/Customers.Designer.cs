@@ -80,7 +80,6 @@
             customerPhone.Size = new Size(71, 28);
             customerPhone.TabIndex = 3;
             customerPhone.Text = "Phone";
-            customerPhone.Click += customerPhone_Click;
             // 
             // customerAddress
             // 
