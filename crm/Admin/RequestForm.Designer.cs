@@ -30,6 +30,8 @@
         {
             button1 = new Button();
             panel1 = new Panel();
+            labelDateText = new Label();
+            labelDate = new Label();
             labelStatusText = new Label();
             labelStatus = new Label();
             labelCustomerIDText = new Label();
@@ -57,6 +59,8 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.GradientActiveCaption;
+            panel1.Controls.Add(labelDateText);
+            panel1.Controls.Add(labelDate);
             panel1.Controls.Add(labelStatusText);
             panel1.Controls.Add(labelStatus);
             panel1.Controls.Add(labelCustomerIDText);
@@ -71,6 +75,25 @@
             panel1.Size = new Size(382, 753);
             panel1.TabIndex = 1;
             panel1.Paint += panel1_Paint;
+            // 
+            // labelDateText
+            // 
+            labelDateText.AutoSize = true;
+            labelDateText.Location = new Point(175, 261);
+            labelDateText.Name = "labelDateText";
+            labelDateText.Size = new Size(72, 20);
+            labelDateText.TabIndex = 11;
+            labelDateText.Text = "Date Text";
+            // 
+            // labelDate
+            // 
+            labelDate.AutoSize = true;
+            labelDate.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            labelDate.Location = new Point(3, 250);
+            labelDate.Name = "labelDate";
+            labelDate.Size = new Size(70, 31);
+            labelDate.TabIndex = 10;
+            labelDate.Text = "Date:";
             // 
             // labelStatusText
             // 
@@ -114,7 +137,7 @@
             // 
             labelDescription.AutoSize = true;
             labelDescription.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            labelDescription.Location = new Point(0, 280);
+            labelDescription.Location = new Point(0, 326);
             labelDescription.Name = "labelDescription";
             labelDescription.Size = new Size(138, 31);
             labelDescription.TabIndex = 5;
@@ -133,13 +156,12 @@
             // labelDescriptionText
             // 
             labelDescriptionText.AutoSize = true;
-            labelDescriptionText.Location = new Point(12, 320);
+            labelDescriptionText.Location = new Point(12, 366);
             labelDescriptionText.MaximumSize = new Size(350, 300);
             labelDescriptionText.Name = "labelDescriptionText";
             labelDescriptionText.Size = new Size(116, 20);
             labelDescriptionText.TabIndex = 3;
             labelDescriptionText.Text = "Description Text";
-            labelDescriptionText.Click += label1_Click_1;
             // 
             // labelSubjectText
             // 
@@ -149,7 +171,6 @@
             labelSubjectText.Size = new Size(89, 20);
             labelSubjectText.TabIndex = 2;
             labelSubjectText.Text = "Subject Text";
-            labelSubjectText.Click += Detay_Click;
             // 
             // RequestForm
             // 
@@ -178,5 +199,7 @@
         private Label labelCustomerID;
         private Label labelStatusText;
         private Label labelStatus;
+        private Label labelDateText;
+        private Label labelDate;
     }
 }

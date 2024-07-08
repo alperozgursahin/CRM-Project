@@ -29,6 +29,11 @@ namespace crm
             // Parameterized query to prevent SQL injection
             string query = "SELECT password, id FROM users WHERE username = @username AND usertype = @usertype";
 
+            if (inputUserType.Equals("Customer")) query = @"SELECT u.Password AS Password, c.ID AS id 
+                                                            FROM users u INNER JOIN customer c ON 
+                                                            u.Username = @username AND u.UserType = @usertype 
+                                                            AND u.Name = c.Name;";
+
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 MySqlCommand cmd = new MySqlCommand(query, connection);
@@ -57,7 +62,7 @@ namespace crm
                             if (inputUserType == "Admin")
                             {
                                 // Open admin dashboard
-                                Form1 adminDashboard = new Form1();
+                                Form1 adminDashboard = new Form1(inputUsername);
                                 adminDashboard.Show();
                             }
                             else if (inputUserType == "Customer")

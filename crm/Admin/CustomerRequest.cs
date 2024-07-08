@@ -6,9 +6,11 @@ namespace crm
 {
     public partial class CustomerRequest : Form
     {
-        public CustomerRequest()
+        private string adminUsername;
+        public CustomerRequest(string adminUsername)
         {
             InitializeComponent();
+            this.adminUsername = adminUsername;
         }
 
         private void CustomerRequest_Load(object sender, EventArgs e)
@@ -95,7 +97,7 @@ namespace crm
 
             button.Click += (sender, e) =>
             {
-                RequestForm requestForm = new RequestForm(customerId, subject, description, status, dateTime);
+                RequestForm requestForm = new RequestForm(customerId, subject, description, status, dateTime, adminUsername);
                 requestForm.Show();
             };
         }
