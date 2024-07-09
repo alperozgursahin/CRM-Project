@@ -17,8 +17,9 @@ namespace crm
         {
             InitializeComponent();
         }
-        
-        private void Customers_Load(object sender, EventArgs e) {
+
+        private void Customers_Load(object sender, EventArgs e)
+        {
             string connectionString = "server=localhost;database=crm_database;uid=root;pwd=1234;"; // Bağlantı dizesini kendinize göre düzenleyin.
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -66,7 +67,10 @@ namespace crm
             panelData.Controls.Add(label);
         }
 
-        
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

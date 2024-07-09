@@ -34,6 +34,7 @@
             customerPhone = new Label();
             customerAddress = new Label();
             panelData = new Panel();
+            labelTitle = new Label();
             panelData.SuspendLayout();
             SuspendLayout();
             // 
@@ -42,7 +43,7 @@
             customerID.Anchor = AnchorStyles.Top;
             customerID.AutoSize = true;
             customerID.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            customerID.Location = new Point(0, 50);
+            customerID.Location = new Point(0, 70);
             customerID.Name = "customerID";
             customerID.Size = new Size(33, 28);
             customerID.TabIndex = 0;
@@ -53,7 +54,7 @@
             customerName.Anchor = AnchorStyles.Top;
             customerName.AutoSize = true;
             customerName.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            customerName.Location = new Point(150, 50);
+            customerName.Location = new Point(146, 70);
             customerName.Name = "customerName";
             customerName.Size = new Size(68, 28);
             customerName.TabIndex = 1;
@@ -64,7 +65,7 @@
             customerEmail.Anchor = AnchorStyles.Top;
             customerEmail.AutoSize = true;
             customerEmail.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            customerEmail.Location = new Point(350, 50);
+            customerEmail.Location = new Point(349, 70);
             customerEmail.Name = "customerEmail";
             customerEmail.Size = new Size(64, 28);
             customerEmail.TabIndex = 2;
@@ -75,7 +76,7 @@
             customerPhone.Anchor = AnchorStyles.Top;
             customerPhone.AutoSize = true;
             customerPhone.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            customerPhone.Location = new Point(550, 50);
+            customerPhone.Location = new Point(547, 70);
             customerPhone.Name = "customerPhone";
             customerPhone.Size = new Size(71, 28);
             customerPhone.TabIndex = 3;
@@ -86,7 +87,7 @@
             customerAddress.Anchor = AnchorStyles.Top;
             customerAddress.AutoSize = true;
             customerAddress.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            customerAddress.Location = new Point(750, 50);
+            customerAddress.Location = new Point(747, 70);
             customerAddress.Name = "customerAddress";
             customerAddress.Size = new Size(87, 28);
             customerAddress.TabIndex = 4;
@@ -95,7 +96,8 @@
             // panelData
             // 
             panelData.AutoSize = true;
-            panelData.BackColor = Color.Tan;
+            panelData.BackColor = SystemColors.ControlLight;
+            panelData.Controls.Add(labelTitle);
             panelData.Controls.Add(customerAddress);
             panelData.Controls.Add(customerPhone);
             panelData.Controls.Add(customerEmail);
@@ -106,6 +108,18 @@
             panelData.Name = "panelData";
             panelData.Size = new Size(800, 450);
             panelData.TabIndex = 0;
+            // 
+            // labelTitle
+            // 
+            labelTitle.Anchor = AnchorStyles.Top;
+            labelTitle.AutoSize = true;
+            labelTitle.Font = new Font("Segoe UI Black", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            labelTitle.Location = new Point(287, 9);
+            labelTitle.Name = "labelTitle";
+            labelTitle.Size = new Size(224, 38);
+            labelTitle.TabIndex = 5;
+            labelTitle.Text = "Customers List";
+            labelTitle.Click += label1_Click;
             // 
             // Customers
             // 
@@ -131,5 +145,6 @@
         private Label customerPhone;
         private Label customerAddress;
         private Panel panelData;
+        private Label labelTitle;
     }
 }

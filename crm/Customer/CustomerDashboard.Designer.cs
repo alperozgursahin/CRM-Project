@@ -41,7 +41,7 @@
             // buttonCreateNewRequest
             // 
             buttonCreateNewRequest.Anchor = AnchorStyles.Top;
-            buttonCreateNewRequest.BackColor = Color.Wheat;
+            buttonCreateNewRequest.BackColor = Color.White;
             buttonCreateNewRequest.Font = new Font("Segoe UI Black", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 162);
             buttonCreateNewRequest.Location = new Point(17, 14);
             buttonCreateNewRequest.Margin = new Padding(50);
@@ -54,7 +54,7 @@
             // 
             // panelData
             // 
-            panelData.BackColor = Color.Tan;
+            panelData.BackColor = SystemColors.ControlLight;
             panelData.Controls.Add(buttonCreateNewRequest);
             panelData.Controls.Add(labelDate);
             panelData.Controls.Add(labelStatus);

@@ -40,6 +40,8 @@
             labelSubject = new Label();
             labelDescriptionText = new Label();
             labelSubjectText = new Label();
+            labelElapsedTime = new Label();
+            labelElapsedTimeText = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -58,7 +60,9 @@
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.GradientActiveCaption;
+            panel1.BackColor = SystemColors.ControlLight;
+            panel1.Controls.Add(labelElapsedTimeText);
+            panel1.Controls.Add(labelElapsedTime);
             panel1.Controls.Add(labelDateText);
             panel1.Controls.Add(labelDate);
             panel1.Controls.Add(labelStatusText);
@@ -74,7 +78,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(382, 753);
             panel1.TabIndex = 1;
-            panel1.Paint += panel1_Paint;
             // 
             // labelDateText
             // 
@@ -137,7 +140,7 @@
             // 
             labelDescription.AutoSize = true;
             labelDescription.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            labelDescription.Location = new Point(0, 326);
+            labelDescription.Location = new Point(0, 357);
             labelDescription.Name = "labelDescription";
             labelDescription.Size = new Size(138, 31);
             labelDescription.TabIndex = 5;
@@ -156,7 +159,7 @@
             // labelDescriptionText
             // 
             labelDescriptionText.AutoSize = true;
-            labelDescriptionText.Location = new Point(12, 366);
+            labelDescriptionText.Location = new Point(12, 388);
             labelDescriptionText.MaximumSize = new Size(350, 300);
             labelDescriptionText.Name = "labelDescriptionText";
             labelDescriptionText.Size = new Size(116, 20);
@@ -172,6 +175,25 @@
             labelSubjectText.TabIndex = 2;
             labelSubjectText.Text = "Subject Text";
             // 
+            // labelElapsedTime
+            // 
+            labelElapsedTime.AutoSize = true;
+            labelElapsedTime.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            labelElapsedTime.Location = new Point(3, 292);
+            labelElapsedTime.Name = "labelElapsedTime";
+            labelElapsedTime.Size = new Size(160, 31);
+            labelElapsedTime.TabIndex = 12;
+            labelElapsedTime.Text = "Elapsed Time:";
+            // 
+            // labelElapsedTimeText
+            // 
+            labelElapsedTimeText.AutoSize = true;
+            labelElapsedTimeText.Location = new Point(175, 303);
+            labelElapsedTimeText.Name = "labelElapsedTimeText";
+            labelElapsedTimeText.Size = new Size(129, 20);
+            labelElapsedTimeText.TabIndex = 13;
+            labelElapsedTimeText.Text = "Elapsed Time Text";
+            // 
             // RequestForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -181,7 +203,7 @@
             Controls.Add(panel1);
             Name = "RequestForm";
             Text = "RequestForm";
-            Load += RequestFormLoad;
+            Load += RequestForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -201,5 +223,7 @@
         private Label labelStatus;
         private Label labelDateText;
         private Label labelDate;
+        private Label labelElapsedTime;
+        private Label labelElapsedTimeText;
     }
 }

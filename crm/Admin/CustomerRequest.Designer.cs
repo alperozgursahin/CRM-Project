@@ -40,7 +40,7 @@
             // 
             // panelData
             // 
-            panelData.BackColor = Color.Tan;
+            panelData.BackColor = SystemColors.ControlLight;
             panelData.Controls.Add(labelDate);
             panelData.Controls.Add(labelStatus);
             panelData.Controls.Add(labelDescription);

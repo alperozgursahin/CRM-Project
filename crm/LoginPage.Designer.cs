@@ -119,7 +119,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.LavenderBlush;
+            BackColor = SystemColors.ControlLight;
             ClientSize = new Size(800, 450);
             Controls.Add(labelWelcome);
             Controls.Add(buttonLogin);

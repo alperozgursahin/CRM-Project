@@ -71,7 +71,7 @@
             // 
             // buttonSubmitRequest
             // 
-            buttonSubmitRequest.BackColor = Color.Wheat;
+            buttonSubmitRequest.BackColor = Color.Silver;
             buttonSubmitRequest.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             buttonSubmitRequest.Location = new Point(311, 266);
             buttonSubmitRequest.Name = "buttonSubmitRequest";
@@ -85,7 +85,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Tan;
+            BackColor = SystemColors.ControlLight;
             ClientSize = new Size(800, 450);
             Controls.Add(buttonSubmitRequest);
             Controls.Add(textDescription);
