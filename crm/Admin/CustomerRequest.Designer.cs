@@ -71,7 +71,7 @@
             labelDate.Anchor = AnchorStyles.Top;
             labelDate.AutoSize = true;
             labelDate.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            labelDate.Location = new Point(829, 100);
+            labelDate.Location = new Point(853, 100);
             labelDate.Name = "labelDate";
             labelDate.Size = new Size(57, 28);
             labelDate.TabIndex = 5;
@@ -82,7 +82,7 @@
             labelStatus.Anchor = AnchorStyles.Top;
             labelStatus.AutoSize = true;
             labelStatus.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            labelStatus.Location = new Point(704, 100);
+            labelStatus.Location = new Point(747, 100);
             labelStatus.Name = "labelStatus";
             labelStatus.Size = new Size(71, 28);
             labelStatus.TabIndex = 4;
@@ -93,7 +93,7 @@
             labelDescription.Anchor = AnchorStyles.Top;
             labelDescription.AutoSize = true;
             labelDescription.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            labelDescription.Location = new Point(496, 100);
+            labelDescription.Location = new Point(519, 100);
             labelDescription.Name = "labelDescription";
             labelDescription.Size = new Size(121, 28);
             labelDescription.TabIndex = 3;
@@ -104,7 +104,7 @@
             labelSubject.Anchor = AnchorStyles.Top;
             labelSubject.AutoSize = true;
             labelSubject.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            labelSubject.Location = new Point(388, 100);
+            labelSubject.Location = new Point(376, 100);
             labelSubject.Name = "labelSubject";
             labelSubject.Size = new Size(82, 28);
             labelSubject.TabIndex = 2;

@@ -31,6 +31,7 @@ namespace crm
             this.dateTime = dateTime;
             this.adminUsername = adminUsername;
             InitializeTimer();
+            this.FormClosed += RequestForm_FormClosed;
         }
 
         private void InitializeTimer()
@@ -377,6 +378,12 @@ namespace crm
             }
 
             await SaveNoteAsync(customerId, subject, noteText);
+        }
+
+        private void RequestForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CustomerRequest customerRequest = new CustomerRequest(adminUsername);
+            customerRequest.Show();
         }
     }
 }

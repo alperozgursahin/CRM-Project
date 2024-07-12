@@ -99,7 +99,10 @@ namespace crm
             {
                 RequestForm requestForm = new RequestForm(customerId, subject, description, status, dateTime, adminUsername);
                 requestForm.Show();
+                this.Close();
             };
         }
+
+        
     }
 }
