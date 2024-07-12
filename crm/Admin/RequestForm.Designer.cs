@@ -30,6 +30,11 @@
         {
             button1 = new Button();
             panel1 = new Panel();
+            updateNoteButton = new Button();
+            noteTextBox = new TextBox();
+            labelNotes = new Label();
+            labelElapsedTimeText = new Label();
+            labelElapsedTime = new Label();
             labelDateText = new Label();
             labelDate = new Label();
             labelStatusText = new Label();
@@ -40,8 +45,6 @@
             labelSubject = new Label();
             labelDescriptionText = new Label();
             labelSubjectText = new Label();
-            labelElapsedTime = new Label();
-            labelElapsedTimeText = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -61,6 +64,9 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ControlLight;
+            panel1.Controls.Add(updateNoteButton);
+            panel1.Controls.Add(noteTextBox);
+            panel1.Controls.Add(labelNotes);
             panel1.Controls.Add(labelElapsedTimeText);
             panel1.Controls.Add(labelElapsedTime);
             panel1.Controls.Add(labelDateText);
@@ -79,10 +85,56 @@
             panel1.Size = new Size(382, 753);
             panel1.TabIndex = 1;
             // 
+            // updateNoteButton
+            // 
+            updateNoteButton.Location = new Point(134, 578);
+            updateNoteButton.Name = "updateNoteButton";
+            updateNoteButton.Size = new Size(107, 29);
+            updateNoteButton.TabIndex = 17;
+            updateNoteButton.Text = "Update Note";
+            updateNoteButton.UseVisualStyleBackColor = true;
+            updateNoteButton.Click += updateNoteButton_Click;
+            // 
+            // noteTextBox
+            // 
+            noteTextBox.Location = new Point(12, 545);
+            noteTextBox.Name = "noteTextBox";
+            noteTextBox.Size = new Size(358, 27);
+            noteTextBox.TabIndex = 16;
+            // 
+            // labelNotes
+            // 
+            labelNotes.AutoSize = true;
+            labelNotes.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            labelNotes.Location = new Point(152, 500);
+            labelNotes.Name = "labelNotes";
+            labelNotes.Size = new Size(67, 31);
+            labelNotes.TabIndex = 15;
+            labelNotes.Text = "Note";
+            // 
+            // labelElapsedTimeText
+            // 
+            labelElapsedTimeText.AutoSize = true;
+            labelElapsedTimeText.Location = new Point(150, 303);
+            labelElapsedTimeText.Name = "labelElapsedTimeText";
+            labelElapsedTimeText.Size = new Size(68, 20);
+            labelElapsedTimeText.TabIndex = 13;
+            labelElapsedTimeText.Text = "0h 0m 0s";
+            // 
+            // labelElapsedTime
+            // 
+            labelElapsedTime.AutoSize = true;
+            labelElapsedTime.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            labelElapsedTime.Location = new Point(3, 300);
+            labelElapsedTime.Name = "labelElapsedTime";
+            labelElapsedTime.Size = new Size(129, 25);
+            labelElapsedTime.TabIndex = 12;
+            labelElapsedTime.Text = "Elapsed Time:";
+            // 
             // labelDateText
             // 
             labelDateText.AutoSize = true;
-            labelDateText.Location = new Point(175, 261);
+            labelDateText.Location = new Point(150, 253);
             labelDateText.Name = "labelDateText";
             labelDateText.Size = new Size(72, 20);
             labelDateText.TabIndex = 11;
@@ -91,17 +143,17 @@
             // labelDate
             // 
             labelDate.AutoSize = true;
-            labelDate.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            labelDate.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
             labelDate.Location = new Point(3, 250);
             labelDate.Name = "labelDate";
-            labelDate.Size = new Size(70, 31);
+            labelDate.Size = new Size(128, 25);
             labelDate.TabIndex = 10;
-            labelDate.Text = "Date:";
+            labelDate.Text = "Created Date:";
             // 
             // labelStatusText
             // 
             labelStatusText.AutoSize = true;
-            labelStatusText.Location = new Point(175, 211);
+            labelStatusText.Location = new Point(150, 203);
             labelStatusText.Name = "labelStatusText";
             labelStatusText.Size = new Size(80, 20);
             labelStatusText.TabIndex = 9;
@@ -110,17 +162,17 @@
             // labelStatus
             // 
             labelStatus.AutoSize = true;
-            labelStatus.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            labelStatus.Location = new Point(3, 204);
+            labelStatus.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            labelStatus.Location = new Point(3, 200);
             labelStatus.Name = "labelStatus";
-            labelStatus.Size = new Size(86, 31);
+            labelStatus.Size = new Size(70, 25);
             labelStatus.TabIndex = 8;
             labelStatus.Text = "Status:";
             // 
             // labelCustomerIDText
             // 
             labelCustomerIDText.AutoSize = true;
-            labelCustomerIDText.Location = new Point(175, 108);
+            labelCustomerIDText.Location = new Point(150, 103);
             labelCustomerIDText.Name = "labelCustomerIDText";
             labelCustomerIDText.Size = new Size(128, 20);
             labelCustomerIDText.TabIndex = 7;
@@ -129,30 +181,30 @@
             // labelCustomerID
             // 
             labelCustomerID.AutoSize = true;
-            labelCustomerID.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            labelCustomerID.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
             labelCustomerID.Location = new Point(3, 100);
             labelCustomerID.Name = "labelCustomerID";
-            labelCustomerID.Size = new Size(153, 31);
+            labelCustomerID.Size = new Size(122, 25);
             labelCustomerID.TabIndex = 6;
             labelCustomerID.Text = "Customer ID:";
             // 
             // labelDescription
             // 
             labelDescription.AutoSize = true;
-            labelDescription.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            labelDescription.Location = new Point(0, 357);
+            labelDescription.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            labelDescription.Location = new Point(3, 350);
             labelDescription.Name = "labelDescription";
-            labelDescription.Size = new Size(138, 31);
+            labelDescription.Size = new Size(121, 28);
             labelDescription.TabIndex = 5;
             labelDescription.Text = "Description";
             // 
             // labelSubject
             // 
             labelSubject.AutoSize = true;
-            labelSubject.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            labelSubject.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
             labelSubject.Location = new Point(3, 150);
             labelSubject.Name = "labelSubject";
-            labelSubject.Size = new Size(100, 31);
+            labelSubject.Size = new Size(80, 25);
             labelSubject.TabIndex = 4;
             labelSubject.Text = "Subject:";
             // 
@@ -169,30 +221,11 @@
             // labelSubjectText
             // 
             labelSubjectText.AutoSize = true;
-            labelSubjectText.Location = new Point(175, 158);
+            labelSubjectText.Location = new Point(150, 153);
             labelSubjectText.Name = "labelSubjectText";
             labelSubjectText.Size = new Size(89, 20);
             labelSubjectText.TabIndex = 2;
             labelSubjectText.Text = "Subject Text";
-            // 
-            // labelElapsedTime
-            // 
-            labelElapsedTime.AutoSize = true;
-            labelElapsedTime.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            labelElapsedTime.Location = new Point(3, 292);
-            labelElapsedTime.Name = "labelElapsedTime";
-            labelElapsedTime.Size = new Size(160, 31);
-            labelElapsedTime.TabIndex = 12;
-            labelElapsedTime.Text = "Elapsed Time:";
-            // 
-            // labelElapsedTimeText
-            // 
-            labelElapsedTimeText.AutoSize = true;
-            labelElapsedTimeText.Location = new Point(175, 303);
-            labelElapsedTimeText.Name = "labelElapsedTimeText";
-            labelElapsedTimeText.Size = new Size(129, 20);
-            labelElapsedTimeText.TabIndex = 13;
-            labelElapsedTimeText.Text = "Elapsed Time Text";
             // 
             // RequestForm
             // 
@@ -225,5 +258,8 @@
         private Label labelDate;
         private Label labelElapsedTime;
         private Label labelElapsedTimeText;
+        private Label labelNotes;
+        private TextBox noteTextBox;
+        private Button updateNoteButton;
     }
 }

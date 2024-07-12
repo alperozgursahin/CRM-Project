@@ -44,7 +44,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(208, 450);
+            panel1.Size = new Size(208, 553);
             panel1.TabIndex = 0;
             // 
             // label1
@@ -84,7 +84,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(782, 553);
             Controls.Add(panel1);
             Name = "Form1";
             Text = "Form1";

@@ -49,11 +49,11 @@ namespace crm
 
         private void AddRowToPanel(string id, string name, string email, string phone, string address, int yOffset, int yMargin)
         {
-            AddLabelToPanel(id, 0, yOffset, yMargin);
-            AddLabelToPanel(name, 150, yOffset, yMargin);
-            AddLabelToPanel(email, 350, yOffset, yMargin);
-            AddLabelToPanel(phone, 550, yOffset, yMargin);
-            AddLabelToPanel(address, 750, yOffset, yMargin);
+            AddLabelToPanel(id, customerID.Location.X, yOffset, yMargin);
+            AddLabelToPanel(name, customerName.Location.X, yOffset, yMargin);
+            AddLabelToPanel(email, customerEmail.Location.X, yOffset, yMargin);
+            AddLabelToPanel(phone, customerPhone.Location.X, yOffset, yMargin);
+            AddLabelToPanel(address, customerAddress.Location.X, yOffset, yMargin);
         }
 
         private void AddLabelToPanel(string text, int xPosition, int yOffset, int yMargin)

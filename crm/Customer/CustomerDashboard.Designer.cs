@@ -43,7 +43,7 @@
             buttonCreateNewRequest.Anchor = AnchorStyles.Top;
             buttonCreateNewRequest.BackColor = Color.White;
             buttonCreateNewRequest.Font = new Font("Segoe UI Black", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            buttonCreateNewRequest.Location = new Point(17, 14);
+            buttonCreateNewRequest.Location = new Point(248, 14);
             buttonCreateNewRequest.Margin = new Padding(50);
             buttonCreateNewRequest.Name = "buttonCreateNewRequest";
             buttonCreateNewRequest.Size = new Size(767, 84);
@@ -64,7 +64,7 @@
             panelData.Dock = DockStyle.Fill;
             panelData.Location = new Point(0, 0);
             panelData.Name = "panelData";
-            panelData.Size = new Size(800, 450);
+            panelData.Size = new Size(1262, 673);
             panelData.TabIndex = 11;
             // 
             // labelDate
@@ -72,7 +72,7 @@
             labelDate.Anchor = AnchorStyles.Top;
             labelDate.AutoSize = true;
             labelDate.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            labelDate.Location = new Point(743, 125);
+            labelDate.Location = new Point(958, 125);
             labelDate.Name = "labelDate";
             labelDate.Size = new Size(57, 28);
             labelDate.TabIndex = 6;
@@ -83,7 +83,7 @@
             labelStatus.Anchor = AnchorStyles.Top;
             labelStatus.AutoSize = true;
             labelStatus.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            labelStatus.Location = new Point(560, 125);
+            labelStatus.Location = new Point(748, 125);
             labelStatus.Name = "labelStatus";
             labelStatus.Size = new Size(71, 28);
             labelStatus.TabIndex = 5;
@@ -94,7 +94,7 @@
             labelDescription.Anchor = AnchorStyles.Top;
             labelDescription.AutoSize = true;
             labelDescription.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            labelDescription.Location = new Point(231, 125);
+            labelDescription.Location = new Point(462, 125);
             labelDescription.Name = "labelDescription";
             labelDescription.Size = new Size(121, 28);
             labelDescription.TabIndex = 4;
@@ -105,7 +105,7 @@
             labelSubject.Anchor = AnchorStyles.Top;
             labelSubject.AutoSize = true;
             labelSubject.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            labelSubject.Location = new Point(87, 125);
+            labelSubject.Location = new Point(318, 125);
             labelSubject.Name = "labelSubject";
             labelSubject.Size = new Size(82, 28);
             labelSubject.TabIndex = 3;
@@ -116,7 +116,7 @@
             labelID.Anchor = AnchorStyles.Top;
             labelID.AutoSize = true;
             labelID.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            labelID.Location = new Point(0, 125);
+            labelID.Location = new Point(231, 125);
             labelID.Name = "labelID";
             labelID.Size = new Size(33, 28);
             labelID.TabIndex = 1;
@@ -126,7 +126,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1262, 673);
             Controls.Add(panelData);
             Name = "CustomerDashboard";
             Text = "CustomerDashboard";

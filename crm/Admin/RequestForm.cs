@@ -3,6 +3,7 @@ using System;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Threading.Tasks;
 
 namespace crm
 {
@@ -66,11 +67,12 @@ namespace crm
             }
         }
 
-        private void RequestForm_Load(object sender, EventArgs e)
+        private async void RequestForm_Load(object sender, EventArgs e)
         {
             startTime = GetStartTime(customerId, subject);
             DisplayRequestDetails();
             ConfigureFormBasedOnStatus();
+            await LoadExistingNoteAsync(customerId, subject); // Notu yükleme işlemini burada çağırın
         }
 
         private void DisplayRequestDetails()
@@ -264,7 +266,7 @@ namespace crm
                 SELECT StartTime, EndTime
                 FROM adminactivitylog
                 WHERE CustomerId = @customerId AND Subject = @subject
-                LIMIT 1";
+                LIMIT 1;";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -275,36 +277,106 @@ namespace crm
                 try
                 {
                     connection.Open();
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    using (var reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
                         {
-                            if (!reader.IsDBNull(0))
-                                startTime = reader.GetDateTime(0);
+                            startTime = reader.GetDateTime(0);
                             if (!reader.IsDBNull(1))
+                            {
                                 endTime = reader.GetDateTime(1);
+                            }
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error fetching start time and end time: " + ex.Message);
+                    MessageBox.Show("Error fetching total elapsed time: " + ex.Message);
                 }
             }
-            TimeSpan elapsedTime = endTime - startTime;
-            return $"{elapsedTime.Hours}h {elapsedTime.Minutes}m {elapsedTime.Seconds}s";
+
+            if (endTime != DateTime.MinValue)
+            {
+                TimeSpan totalElapsedTime = endTime - startTime;
+                return $"{totalElapsedTime.Hours}h {totalElapsedTime.Minutes}m {totalElapsedTime.Seconds}s";
+            }
+            return "N/A";
+        }
+
+        private async Task LoadExistingNoteAsync(string customerId, string subject)
+        {
+            string connectionString = "server=localhost;database=crm_database;uid=root;pwd=1234;";
+            string query = @"
+                SELECT Note
+                FROM notes
+                WHERE CustomerId = @customerId AND Subject = @subject
+                ORDER BY CreatedDate DESC
+                LIMIT 1;";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@customerId", customerId);
+                cmd.Parameters.AddWithValue("@subject", subject);
+
+                try
+                {
+                    await connection.OpenAsync();
+                    var result = await cmd.ExecuteScalarAsync();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        noteTextBox.Text = result.ToString();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading existing note: " + ex.Message);
+                }
+            }
+        }
+
+        private async Task SaveNoteAsync(string customerId, string subject, string note)
+        {
+            string connectionString = "server=localhost;database=crm_database;uid=root;pwd=1234;";
+            string query = @"
+                INSERT INTO notes (CustomerId, Subject, Note, CreatedDate)
+                VALUES (@customerId, @subject, @note, @createdDate)";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@customerId", customerId);
+                cmd.Parameters.AddWithValue("@subject", subject);
+                cmd.Parameters.AddWithValue("@note", note);
+                cmd.Parameters.AddWithValue("@createdDate", DateTime.Now);
+
+                try
+                {
+                    await connection.OpenAsync();
+                    await cmd.ExecuteNonQueryAsync();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error saving note: " + ex.Message);
+                }
+            }
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            if (status.Equals("Closed"))
+            labelElapsedTimeText.Text = GetElapsedTime(startTime);
+        }
+
+        private async void updateNoteButton_Click(object sender, EventArgs e)
+        {
+            string noteText = noteTextBox.Text;
+            if (string.IsNullOrWhiteSpace(noteText))
             {
-                timer.Stop();
+                MessageBox.Show("Please enter a note.");
+                return;
             }
-            else
-            {
-                labelElapsedTimeText.Text = GetElapsedTime(startTime);
-            }
+
+            await SaveNoteAsync(customerId, subject, noteText);
         }
     }
 }
