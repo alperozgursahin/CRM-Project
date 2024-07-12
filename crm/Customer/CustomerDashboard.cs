@@ -77,10 +77,10 @@ namespace crm
             };
 
             if (isDescription)
-                label.MaximumSize = new System.Drawing.Size(250, 30);
+                label.MaximumSize = new System.Drawing.Size(300, 30);
 
             if (isSubject)
-                label.MaximumSize = new System.Drawing.Size(125, 30);
+                label.MaximumSize = new System.Drawing.Size(200, 30);
 
             label.AutoEllipsis = true;
             panelData.Controls.Add(label);

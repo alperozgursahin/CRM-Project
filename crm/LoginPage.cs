@@ -62,7 +62,7 @@ namespace crm
                             if (inputUserType == "Admin")
                             {
                                 // Open admin dashboard
-                                Form1 adminDashboard = new Form1(inputUsername);
+                                AdminMainPage adminDashboard = new AdminMainPage(inputUsername);
                                 adminDashboard.Show();
                             }
                             else if (inputUserType == "Customer")

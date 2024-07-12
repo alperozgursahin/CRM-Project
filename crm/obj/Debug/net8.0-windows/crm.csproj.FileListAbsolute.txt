@@ -12,7 +12,6 @@ C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\refint\crm.dll
 C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\crm.pdb
 C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\crm.genruntimeconfig.cache
 C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\ref\crm.dll
-C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\crm.Form1.resources
 C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\crm.csproj.GenerateResource.cache
 C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\crm.csproj.AssemblyReference.cache
 C:\Users\alper\source\repos\crm\crm\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
@@ -35,3 +34,4 @@ C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\crm.RequestForm.res
 C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\crm.LoginPage.resources
 C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\crm.CustomerDashboard.resources
 C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\crm.Customer.CustomerCreateRequest.resources
+C:\Users\alper\source\repos\crm\crm\obj\Debug\net8.0-windows\crm.AdminMainPage.resources

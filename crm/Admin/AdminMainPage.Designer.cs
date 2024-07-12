@@ -1,6 +1,6 @@
 ﻿namespace crm
 {
-    partial class Form1
+    partial class AdminMainPage
     {
         /// <summary>
         ///  Required designer variable.
@@ -86,9 +86,9 @@
             BackColor = SystemColors.ControlLight;
             ClientSize = new Size(782, 553);
             Controls.Add(panel1);
-            Name = "Form1";
-            Text = "Form1";
-            Load += Form1_Load;
+            Name = "AdminMainPage";
+            Text = "AdminMainPage";
+            Load += AdminMainPage_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

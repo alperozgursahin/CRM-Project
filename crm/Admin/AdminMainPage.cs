@@ -1,9 +1,9 @@
 namespace crm
 {
-    public partial class Form1 : Form
+    public partial class AdminMainPage : Form
     {
         private string username;
-        public Form1(string username)
+        public AdminMainPage(string username)
         {
             InitializeComponent();
             this.username = username;
@@ -18,7 +18,7 @@ namespace crm
             customers.Show();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void AdminMainPage_Load(object sender, EventArgs e)
         {
 
         }
